@@ -1,32 +1,24 @@
 package br.com.cruzvita;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Cliente cliente = new Cliente();
-        cliente.nome = "Pedro";
-        cliente.cpf = "24343434";
-        cliente.endereco = "Avenida Java, 876 - São Miguel";
-        cliente.idade = 28;
-        cliente.telefone = "22277-8847";
+            String nome;
+            double inicial;
+            Scanner entrada = new Scanner(System.in);
+            Cliente cliente = new Cliente();
+            Scanner conta = new Scanner(System.in);
 
-        System.out.println(cliente.nome);
-        System.out.println(cliente.cpf);
-        System.out.println(cliente.endereco);
-        System.out.println(cliente.idade);
-        System.out.println(cliente.telefone);
+            System.out.println("Cadastrando novo cliente");
+            System.out.println("Informe seu nome: ");
+            nome = entrada.nextLine();
 
-        System.out.println("-------------------");
+            System.out.println("Informe o valor inicial de deposito: ");
+            inicial = entrada.nextDouble();
 
-        Conta conta = new Conta();
-        conta.numConta = 1234;
-        conta.agencia = 5678;
-        conta.tipoDeConta = "Conta Corrente";
-        conta.saldo = 560.00D;
+            Banco newConta = new Banco(nome, conta, inicial);
+            newConta.iniciar();
 
-        System.out.println(conta);
-        System.out.println(conta.numConta);
-        System.out.println(conta.agencia);
-        System.out.println(conta.tipoDeConta);
-        System.out.println(conta.saldo);
     }
 }
