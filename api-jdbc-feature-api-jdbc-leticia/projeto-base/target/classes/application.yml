@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: vita-projeto-usuario
+  #profiles:
+    #active:
+  server:
+  port: 8080
